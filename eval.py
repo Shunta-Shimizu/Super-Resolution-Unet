@@ -1,27 +1,8 @@
 import numpy as np
 import math
-# from PIL import Image
 import cv2
 import os
 import glob
-
-name = "r1233.png"
-high_img = cv2.imread("/home/shimizu/CV_project/dataset/test/high/"+name)
-low_img = cv2.imread("/home/shimizu/CV_project/dataset/test/low_4/"+name)
-output_img = cv2.imread("/home/shimizu/CV_project/dataset/test/572_4_epoch50/"+name)
-
-low_psnr = cv2.PSNR(low_img, high_img)
-output_psnr = cv2.PSNR(output_img, high_img)
-
-low_datasize = os.path.getsize("/home/shimizu/CV_project/dataset/test/low_4/"+name)
-output_datasize = os.path.getsize("/home/shimizu/CV_project/dataset/test/572_4_epoch50/"+name)
-high_datasize = os.path.getsize("/home/shimizu/CV_project/dataset/test/high/"+name)
-
-print("high_low_PSNR: ", round(low_psnr, 3))
-print("high_output_PSNR: ", round(output_psnr, 3))
-print("low_datasize: ", round(low_datasize / 1024, 2))
-print("output_dataseize: ", round(output_datasize / 1024, 2))
-print("high_datasize: ", round(high_datasize / 1024, 2))
 
 test_low_images = glob.glob("/home/shimizu/CV_project/dataset/test/low_4/*")
 test_output_images = glob.glob("/home/shimizu/CV_project/dataset/test/572_4_epoch50/*")

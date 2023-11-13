@@ -113,4 +113,4 @@ dependencies:
       - tqdm==4.65.0
       - tzdata==2023.3
       - zipp==3.15.0
-prefix: /home/shimizu/.pyenv/versions/anaconda3-2023.03/envs/final_project
+

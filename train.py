@@ -7,10 +7,10 @@ from dataset import LowHighDataSet
 from tqdm import tqdm
 
 transform = torchvision.transforms.Compose([torchvision.transforms.ToTensor()])
-train_folder_path = "/home/shimizu/CV_project/dataset/train/"
+train_folder_path = "./dataset/train/"
 train_dataset = LowHighDataSet(transform, train_folder_path)
 
-test_folder_path = "/home/shimizu/CV_project/dataset/test/"
+test_folder_path = "./dataset/test/"
 test_dataset = LowHighDataSet(transform, test_folder_path)
 
 batch_size = 2
@@ -70,11 +70,11 @@ for i in range(epochs):
         if loss_i < min_loss:
             min_loss = loss_i
             model = model.to("cpu")
-            torch.save(model.state_dict(), "/home/shimizu/CV_project/model/572_4_epoch50/572_4_super_resolution.pth")
+            torch.save(model.state_dict(), "./model/572_4_epoch50/572_4_super_resolution.pth")
             print("save model")
             model = model.to(device)
         elif (i+1)%10 == 0:
             model = model.to("cpu")
-            torch.save(model.state_dict(), "/home/shimizu/CV_project/model/572_4_epoch50/572_4_super_resolution{}.pth".format(str(i+1)))
+            torch.save(model.state_dict(), "./model/572_4_epoch50/572_4_super_resolution{}.pth".format(str(i+1)))
             print("save model")
             model = model.to(device)

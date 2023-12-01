@@ -4,9 +4,9 @@ import cv2
 import os
 import glob
 
-test_low_images = glob.glob("/home/shimizu/CV_project/dataset/test/low_4/*")
-test_output_images = glob.glob("/home/shimizu/CV_project/dataset/test/572_4_epoch50/*")
-test_high_images = glob.glob("/home/shimizu/CV_project//dataset/test/high/*")
+test_low_images = glob.glob("./dataset/test/low_4/*")
+test_output_images = glob.glob("./dataset/test/572_4_epoch50/*")
+test_high_images = glob.glob("./dataset/test/high/*")
 
 sum_low_psnr = 0
 sum_low_datasize = 0
